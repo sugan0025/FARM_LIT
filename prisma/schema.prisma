@@ -1,0 +1,261 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+enum TouchType {
+  FIRST_TOUCH
+  LAST_TOUCH
+}
+
+model User {
+  id           String      @id @default(cuid())
+  name         String
+  email        String      @unique
+  passwordHash String
+  role         Role        @default(USER)
+  phone        String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  addresses    Address[]
+  orders       Order[]
+  reviews      Review[]
+  cart         Cart?
+
+  @@index([email])
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  image       String?
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
+
+  @@index([slug])
+}
+
+model Product {
+  id                 String      @id @default(cuid())
+  name               String
+  slug               String      @unique
+  description        String
+  shortDescription   String?
+  categoryId         String
+  category           Category    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  price              Float
+  compareAtPrice     Float?
+  discountPercentage Int         @default(0)
+  SKU                String      @unique
+  stockQuantity      Int         @default(0)
+  unit               String      @default("kg") // kg, 500g, litre, pack, piece
+  images             String      // JSON array of image URLs
+  altText            String?
+  rating             Float       @default(5.0)
+  reviewCount        Int         @default(0)
+  isFeatured         Boolean     @default(false)
+  isActive           Boolean     @default(true)
+  origin             String?     @default("Local Farms")
+  shelfLife          String?     @default("3-5 Days")
+  storageNotes       String?     @default("Keep refrigerated below 4°C")
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  orderItems         OrderItem[]
+  cartItems          CartItem[]
+  reviews            Review[]
+
+  @@index([categoryId])
+  @@index([slug])
+  @@index([isFeatured])
+  @@index([isActive])
+}
+
+model Cart {
+  id           String     @id @default(cuid())
+  userId       String?    @unique
+  user         User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionToken String?    @unique
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  items        CartItem[]
+
+  @@index([userId])
+  @@index([sessionToken])
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([cartId, productId])
+  @@index([cartId])
+  @@index([productId])
+}
+
+model Address {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name       String
+  phone      String
+  street     String
+  city       String
+  state      String
+  postalCode String
+  country    String   @default("India")
+  isDefault  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  orders     Order[]
+
+  @@index([userId])
+}
+
+model Order {
+  id                String                 @id @default(cuid())
+  orderNumber       String                 @unique
+  userId            String?
+  user              User?                  @relation(fields: [userId], references: [id], onDelete: SetNull)
+  customerName      String
+  customerEmail     String
+  customerPhone     String
+  shippingAddressId String?
+  shippingAddress   Address?               @relation(fields: [shippingAddressId], references: [id], onDelete: SetNull)
+  deliveryStreet    String
+  deliveryCity      String
+  deliveryState     String
+  deliveryPostalCode String
+  deliveryCountry   String                 @default("India")
+  subtotal          Float
+  discount          Float                  @default(0)
+  deliveryCharge    Float                  @default(0)
+  total             Float
+  status            OrderStatus            @default(PENDING)
+  paymentMethod     String                 @default("COD") // COD, TEST_CARD, UPI
+  paymentStatus     PaymentStatus          @default(PENDING)
+  notes             String?
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  items             OrderItem[]
+  attributions      CampaignAttribution[]
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id           String   @id @default(cuid())
+  orderId      String
+  order        Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+  productName  String
+  productPrice Float
+  unit         String   @default("kg")
+  quantity     Int
+  total        Float
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userName  String
+  rating    Int      @default(5)
+  comment   String
+  isDemo    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+model Coupon {
+  id            String       @id @default(cuid())
+  code          String       @unique
+  description   String
+  discountType  DiscountType @default(PERCENTAGE)
+  discountValue Float
+  minOrderValue Float        @default(0)
+  maxDiscount   Float?
+  expiresAt     DateTime?
+  isActive      Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@index([code])
+  @@index([isActive])
+}
+
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+  isActive     Boolean  @default(true)
+
+  @@index([email])
+}
+
+model CampaignAttribution {
+  id           String     @id @default(cuid())
+  orderId      String?
+  order        Order?     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  sessionToken String?
+  utmSource    String?
+  utmMedium    String?
+  utmCampaign  String?
+  utmTerm      String?
+  utmContent   String?
+  touchType    TouchType  @default(FIRST_TOUCH)
+  createdAt    DateTime   @default(now())
+
+  @@index([orderId])
+  @@index([sessionToken])
+  @@index([utmCampaign])
+}
