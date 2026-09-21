@@ -6,7 +6,7 @@ export const INITIAL_CATEGORIES: Category[] = [
     name: 'Vegetables',
     slug: 'vegetables',
     description: 'Farm-harvested fresh greens, root vegetables, and daily staples picked at peak crispness.',
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/vegetables.webp',
     order: 1,
   },
   {
@@ -14,7 +14,7 @@ export const INITIAL_CATEGORIES: Category[] = [
     name: 'Fruits',
     slug: 'fruits',
     description: 'Naturally ripened, sun-kissed fruits bursting with vitamins, sweetness, and hydration.',
-    image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/fruits.webp',
     order: 2,
   },
   {
@@ -22,7 +22,7 @@ export const INITIAL_CATEGORIES: Category[] = [
     name: 'Grains & Staples',
     slug: 'grains-staples',
     description: 'Unpolished pulses, stone-ground flours, and heirloom rice varieties from trusted growers.',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/grains.webp',
     order: 3,
   },
   {
@@ -30,7 +30,7 @@ export const INITIAL_CATEGORIES: Category[] = [
     name: 'Grocery Essentials',
     slug: 'grocery-essentials',
     description: 'Pure cold-pressed oils, artisanal raw honey, dairy essentials, and natural kitchen seasonings.',
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/essentials.webp',
     order: 4,
   },
 ];
@@ -51,8 +51,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 45,
     unit: '250g',
     images: [
-      'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=800&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80',
+      '/images/products/spinach.webp',
     ],
     altText: 'Fresh green organic baby spinach leaves in a natural basket',
     rating: 4.8,
@@ -77,8 +76,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 120,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1546470427-e26264be0b11?w=800&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&auto=format&fit=crop&q=80',
+      '/images/products/tomatoes.webp',
     ],
     altText: 'Fresh red vine-ripened tomatoes',
     rating: 4.7,
@@ -103,7 +101,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 65,
     unit: '500g',
     images: [
-      'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=800&auto=format&fit=crop&q=80',
+      '/images/products/carrots.webp',
     ],
     altText: 'Fresh organic carrots on rustic wooden surface',
     rating: 4.9,
@@ -128,7 +126,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 150,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800&auto=format&fit=crop&q=80',
+      '/images/products/potatoes.webp',
     ],
     altText: 'Freshly harvested earthy potatoes',
     rating: 4.6,
@@ -153,7 +151,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 40,
     unit: '500g',
     images: [
-      'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=800&auto=format&fit=crop&q=80',
+      '/images/products/capsicum.webp',
     ],
     altText: 'Vibrant fresh green bell peppers',
     rating: 4.8,
@@ -178,7 +176,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 30,
     unit: 'piece',
     images: [
-      'https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=800&auto=format&fit=crop&q=80',
+      '/images/products/broccoli.webp',
     ],
     altText: 'Fresh green broccoli head with tight beads',
     rating: 4.9,
@@ -205,7 +203,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 60,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80',
+      '/images/products/apples.webp',
     ],
     altText: 'Crisp red Royal Gala apples in orchard sunlight',
     rating: 4.9,
@@ -230,7 +228,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 80,
     unit: 'pack', // 1 dozen
     images: [
-      'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800&auto=format&fit=crop&q=80',
+      '/images/products/bananas.webp',
     ],
     altText: 'Golden ripe bananas bunch',
     rating: 4.8,
@@ -255,7 +253,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 50,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=800&auto=format&fit=crop&q=80',
+      '/images/products/oranges.webp',
     ],
     altText: 'Vibrant sweet Nagpur oranges with citrus leaves',
     rating: 4.7,
@@ -280,7 +278,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 35,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1541344999736-83eca872f241?w=800&auto=format&fit=crop&q=80',
+      '/images/products/pomegranate.webp',
     ],
     altText: 'Fresh sliced pomegranate showing ruby arils',
     rating: 4.9,
@@ -307,7 +305,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 75,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&auto=format&fit=crop&q=80',
+      '/images/products/basmati-rice.webp',
     ],
     altText: 'Slender grains of aromatic raw basmati rice in wooden bowl',
     rating: 4.9,
@@ -332,7 +330,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 110,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=80',
+      '/images/products/atta.webp',
     ],
     altText: 'Stone ground whole wheat flour in ceramic bowl',
     rating: 4.8,
@@ -357,7 +355,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 55,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop&q=80',
+      '/images/products/toor-dal.webp',
     ],
     altText: 'Organic golden toor dal pulses',
     rating: 4.8,
@@ -382,7 +380,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 40,
     unit: 'litre',
     images: [
-      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=80',
+      '/images/products/mustard-oil.webp',
     ],
     altText: 'Golden cold pressed edible oil in glass bottle',
     rating: 4.9,
@@ -409,7 +407,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 35,
     unit: '500g',
     images: [
-      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80',
+      '/images/products/honey.webp',
     ],
     altText: 'Raw organic golden honey drizzling from wooden dipper',
     rating: 5.0,
@@ -434,7 +432,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 28,
     unit: '500g',
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop&q=80',
+      '/images/products/ghee.webp',
     ],
     altText: 'Pure golden desi ghee in traditional glass jar',
     rating: 5.0,
@@ -459,7 +457,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 90,
     unit: 'kg',
     images: [
-      'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?w=800&auto=format&fit=crop&q=80',
+      '/images/products/pink-salt.webp',
     ],
     altText: 'Pure pink Himalayan rock salt crystals',
     rating: 4.9,
@@ -484,7 +482,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 40,
     unit: 'pack', // 6 eggs
     images: [
-      'https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=800&auto=format&fit=crop&q=80',
+      '/images/products/eggs.webp',
     ],
     altText: 'Farm fresh brown eggs in eco-friendly carton',
     rating: 4.9,

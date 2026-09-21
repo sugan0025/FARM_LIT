@@ -9,7 +9,7 @@ const categories = [
     name: 'Vegetables',
     slug: 'vegetables',
     description: 'Farm-harvested fresh greens, root vegetables, and daily staples picked at peak crispness.',
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/vegetables.webp',
     order: 1,
   },
   {
@@ -17,7 +17,7 @@ const categories = [
     name: 'Fruits',
     slug: 'fruits',
     description: 'Naturally ripened, sun-kissed fruits bursting with vitamins, sweetness, and hydration.',
-    image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/fruits.webp',
     order: 2,
   },
   {
@@ -25,7 +25,7 @@ const categories = [
     name: 'Grains & Staples',
     slug: 'grains-staples',
     description: 'Unpolished pulses, stone-ground flours, and heirloom rice varieties from trusted growers.',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/grains.webp',
     order: 3,
   },
   {
@@ -33,7 +33,7 @@ const categories = [
     name: 'Grocery Essentials',
     slug: 'grocery-essentials',
     description: 'Pure cold-pressed oils, artisanal raw honey, dairy essentials, and natural kitchen seasonings.',
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop&q=80',
+    image: '/images/categories/essentials.webp',
     order: 4,
   },
 ];
@@ -53,8 +53,7 @@ const products = [
     stockQuantity: 45,
     unit: '250g',
     images: JSON.stringify([
-      'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=800&auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80',
+      '/images/products/spinach.webp',
     ]),
     altText: 'Fresh green organic baby spinach leaves',
     rating: 4.8,
@@ -79,7 +78,7 @@ const products = [
     stockQuantity: 120,
     unit: 'kg',
     images: JSON.stringify([
-      'https://images.unsplash.com/photo-1546470427-e26264be0b11?w=800&auto=format&fit=crop&q=80',
+      '/images/products/tomatoes.webp',
     ]),
     altText: 'Fresh red vine-ripened tomatoes',
     rating: 4.7,
@@ -104,7 +103,7 @@ const products = [
     stockQuantity: 60,
     unit: 'kg',
     images: JSON.stringify([
-      'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80',
+      '/images/products/apples.webp',
     ]),
     altText: 'Crisp red Royal Gala apples in orchard sunlight',
     rating: 4.9,
@@ -129,7 +128,7 @@ const products = [
     stockQuantity: 75,
     unit: 'kg',
     images: JSON.stringify([
-      'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&auto=format&fit=crop&q=80',
+      '/images/products/basmati-rice.webp',
     ]),
     altText: 'Slender grains of aromatic raw basmati rice in wooden bowl',
     rating: 4.9,
@@ -154,7 +153,7 @@ const products = [
     stockQuantity: 35,
     unit: '500g',
     images: JSON.stringify([
-      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80',
+      '/images/products/honey.webp',
     ]),
     altText: 'Raw organic golden honey drizzling from wooden dipper',
     rating: 5.0,

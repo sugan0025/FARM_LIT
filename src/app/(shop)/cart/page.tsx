@@ -88,7 +88,7 @@ export default function CartPage() {
                   <div className="flex items-center gap-4">
                     <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-earth-100 shrink-0 border border-earth-100">
                       <Image
-                        src={item.product.images[0] || 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400'}
+                        src={item.product.images[0] || '/images/categories/vegetables.webp'}
                         alt={item.product.name}
                         fill
                         className="object-cover"

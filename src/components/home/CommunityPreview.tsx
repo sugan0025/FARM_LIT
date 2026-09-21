@@ -11,7 +11,7 @@ export function CommunityPreview() {
       title: 'Crispy Palak & Dal Cheela with Fresh Mint Dip',
       snippet: 'A high-protein breakfast recipe highlighting hydro-washed baby spinach and stone-ground yellow lentils.',
       readTime: '4 min read',
-      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600',
+      image: '/images/products/spinach.webp',
     },
     {
       category: 'Farming Tips',
@@ -19,7 +19,7 @@ export function CommunityPreview() {
       title: 'How Our Farmers Prevent Pests Using Organic Neem Sprays',
       snippet: 'Learn how traditional Companion Planting protects tomatoes and bell peppers without artificial synthetic chemicals.',
       readTime: '5 min read',
-      image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600',
+      image: '/images/products/tomatoes.webp',
     },
     {
       category: 'Seasonal Produce',
@@ -27,7 +27,7 @@ export function CommunityPreview() {
       title: 'The Autumn Harvest Calendar: What to Eat This Month',
       snippet: 'Why consuming regional produce according to seasonal cycles improves gut immunity and maximizes micronutrient absorption.',
       readTime: '3 min read',
-      image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=600',
+      image: '/images/categories/fruits.webp',
     },
     {
       category: 'Sustainability Stories',
@@ -35,7 +35,7 @@ export function CommunityPreview() {
       title: 'Zero Plastic: Our Biodegradable Jute & Cornstarch Packaging',
       snippet: 'How Farm_lit replaced plastic crate liners with compostable plant materials to divert 4 tons of waste this quarter.',
       readTime: '6 min read',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600',
+      image: '/images/categories/grains.webp',
     },
   ];
 

@@ -19,7 +19,7 @@ export default function CommunityPage() {
       snippet: 'A high-protein wholesome breakfast recipe highlighting hydro-washed baby spinach and stone-ground yellow lentils. Ready in under 15 minutes.',
       readTime: '4 min read',
       date: 'Sept 18, 2026',
-      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=700',
+      image: '/images/products/spinach.webp',
     },
     {
       category: 'Farming Tips',
@@ -28,7 +28,7 @@ export default function CommunityPage() {
       snippet: 'Learn how traditional Companion Planting protects tomatoes and bell peppers without artificial synthetic chemicals or wax coatings.',
       readTime: '5 min read',
       date: 'Sept 14, 2026',
-      image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=700',
+      image: '/images/products/tomatoes.webp',
     },
     {
       category: 'Seasonal Produce',
@@ -37,7 +37,7 @@ export default function CommunityPage() {
       snippet: 'Why consuming regional produce according to seasonal cycles improves gut immunity, supports local flora, and maximizes micronutrient absorption.',
       readTime: '3 min read',
       date: 'Sept 10, 2026',
-      image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=700',
+      image: '/images/categories/fruits.webp',
     },
     {
       category: 'Sustainability Stories',
@@ -46,7 +46,7 @@ export default function CommunityPage() {
       snippet: 'How Farm_lit replaced single-use plastic crate liners with compostable plant materials to divert 4 tons of landfill waste this quarter.',
       readTime: '6 min read',
       date: 'Sept 05, 2026',
-      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=700',
+      image: '/images/categories/grains.webp',
     },
     {
       category: 'Healthy Recipes',
@@ -55,7 +55,7 @@ export default function CommunityPage() {
       snippet: 'Toss mountain russet potatoes, sweet carrots, and bell peppers in pure A2 bilona cow ghee with rock salt and crushed rosemary for a wholesome supper.',
       readTime: '5 min read',
       date: 'Aug 29, 2026',
-      image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=700',
+      image: '/images/products/ghee.webp',
     },
     {
       category: 'Farming Tips',
@@ -64,7 +64,7 @@ export default function CommunityPage() {
       snippet: 'Commercial supermarket apples are coated with petroleum-derived shellac. Here is why our Himachal orchard growers refuse wax treatments.',
       readTime: '4 min read',
       date: 'Aug 21, 2026',
-      image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=700',
+      image: '/images/products/apples.webp',
     },
   ];
 

@@ -39,7 +39,7 @@ export function CategorySection({ categories }: CategorySectionProps) {
               {/* Image Container */}
               <div className="relative pt-[70%] bg-earth-100 overflow-hidden">
                 <Image
-                  src={category.image || 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600'}
+                  src={category.image || '/images/categories/vegetables.webp'}
                   alt={category.name}
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"

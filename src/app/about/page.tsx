@@ -30,7 +30,7 @@ export default function AboutPage() {
         {/* Story visual */}
         <div className="relative h-72 sm:h-96 rounded-3xl overflow-hidden shadow-xl bg-earth-100 border border-earth-200">
           <Image
-            src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&auto=format&fit=crop&q=80"
+            src="/images/banners/farm-landscape.webp"
             alt="Lush green farmland in morning mist"
             fill
             className="object-cover"

@@ -54,7 +54,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           className="relative block w-full pt-[75%] bg-earth-50 overflow-hidden"
         >
           <Image
-            src={product.images[0] || 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600'}
+            src={product.images[0] || '/images/categories/vegetables.webp'}
             alt={product.altText || product.name}
             fill
             priority={priority}

@@ -333,7 +333,7 @@ export default function CheckoutPage() {
                   <div className="flex items-center gap-2.5">
                     <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-earth-100 shrink-0 border border-earth-200">
                       <Image
-                        src={item.product.images[0] || 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200'}
+                        src={item.product.images[0] || '/images/categories/vegetables.webp'}
                         alt={item.product.name}
                         fill
                         className="object-cover"

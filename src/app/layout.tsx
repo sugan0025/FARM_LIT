@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       'Farm fresh vegetables, seasonal fruits, stone-ground flour, and pantry staples straight from regional farms to your kitchen.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&auto=format&fit=crop&q=80',
+        url: '/images/banners/hero-fresh.webp',
         width: 1200,
         height: 630,
         alt: 'Farm_lit Fresh Harvest Vegetables and Fruits',

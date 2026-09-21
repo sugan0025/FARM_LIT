@@ -70,7 +70,7 @@ export function HeroSection() {
               {/* Main Visual */}
               <div className="relative h-[380px] sm:h-[460px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-earth-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1000&auto=format&fit=crop&q=85"
+                  src="/images/banners/hero-fresh.webp"
                   alt="Fresh farm harvest vegetables and fruits in rustic wooden crates"
                   fill
                   priority
