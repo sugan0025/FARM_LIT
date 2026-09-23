@@ -12,14 +12,19 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#1e6b37',
     icons: [
       {
-        src: '/images/categories/vegetables.webp',
+        src: '/icon-192.png',
         sizes: '192x192',
-        type: 'image/webp',
+        type: 'image/png',
       },
       {
-        src: '/images/categories/vegetables.webp',
+        src: '/icon-512.png',
         sizes: '512x512',
-        type: 'image/webp',
+        type: 'image/png',
+      },
+      {
+        src: '/icon.svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
       },
     ],
   };

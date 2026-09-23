@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f3d1e" />
+      <stop offset="50%" stop-color="#166534" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="65%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.45" />
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="leafLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+
+    <linearGradient id="leafRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#fde047" />
+    </linearGradient>
+
+    <linearGradient id="stemGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+  </defs>
+
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="url(#bgGrad)" />
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="none" stroke="#4ade80" stroke-width="4" stroke-opacity="0.3" />
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="url(#sunGlow)" />
+
+  <g id="sprout-icon" transform="translate(0, 10)">
+    <path
+      d="M256 380 C256 310 252 230 256 160 C256 220 258 310 256 380 Z"
+      fill="none"
+      stroke="url(#stemGrad)"
+      stroke-width="18"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M256 260 C210 260 148 232 140 168 C140 168 188 152 240 188 C252 196 256 220 256 260 Z"
+      fill="url(#leafLeft)"
+    />
+
+    <path
+      d="M256 210 C296 210 364 186 372 126 C372 126 328 112 276 144 C262 152 256 174 256 210 Z"
+      fill="url(#leafRight)"
+    />
+
+    <path
+      d="M256 160 C252 136 244 116 256 94 C268 116 260 136 256 160 Z"
+      fill="#bbf7d0"
+    />
+
+    <circle cx="366" cy="116" r="14" fill="#fef08a" />
+  </g>
+</svg>
