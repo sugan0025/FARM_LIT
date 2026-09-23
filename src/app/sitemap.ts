@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getProducts, getCategories } from '@/lib/db';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { COMMUNITY_ARTICLES } from '@/lib/articles-data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.baseUrl;
@@ -42,5 +43,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages];
+  const articlePages = COMMUNITY_ARTICLES.map((a) => ({
+    url: `${baseUrl}/community/${a.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...categoryPages, ...productPages, ...articlePages];
 }

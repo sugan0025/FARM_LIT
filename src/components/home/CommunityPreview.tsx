@@ -2,42 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BookOpen, ChefHat, Sprout, Recycle, ArrowRight } from 'lucide-react';
+import { COMMUNITY_ARTICLES } from '@/lib/articles-data';
+
+const CATEGORY_ICONS: Record<string, React.ElementType> = {
+  'Healthy Recipes': ChefHat,
+  'Farming Tips': Sprout,
+  'Seasonal Produce': BookOpen,
+  'Sustainability Stories': Recycle,
+};
 
 export function CommunityPreview() {
-  const articles = [
-    {
-      category: 'Healthy Recipes',
-      icon: ChefHat,
-      title: 'Crispy Palak & Dal Cheela with Fresh Mint Dip',
-      snippet: 'A high-protein breakfast recipe highlighting hydro-washed baby spinach and stone-ground yellow lentils.',
-      readTime: '4 min read',
-      image: '/images/products/spinach.webp',
-    },
-    {
-      category: 'Farming Tips',
-      icon: Sprout,
-      title: 'How Our Farmers Prevent Pests Using Organic Neem Sprays',
-      snippet: 'Learn how traditional Companion Planting protects tomatoes and bell peppers without artificial synthetic chemicals.',
-      readTime: '5 min read',
-      image: '/images/products/tomatoes.webp',
-    },
-    {
-      category: 'Seasonal Produce',
-      icon: BookOpen,
-      title: 'The Autumn Harvest Calendar: What to Eat This Month',
-      snippet: 'Why consuming regional produce according to seasonal cycles improves gut immunity and maximizes micronutrient absorption.',
-      readTime: '3 min read',
-      image: '/images/categories/fruits.webp',
-    },
-    {
-      category: 'Sustainability Stories',
-      icon: Recycle,
-      title: 'Zero Plastic: Our Biodegradable Jute & Cornstarch Packaging',
-      snippet: 'How Farm_lit replaced plastic crate liners with compostable plant materials to divert 4 tons of waste this quarter.',
-      readTime: '6 min read',
-      image: '/images/categories/grains.webp',
-    },
-  ];
+  const articles = COMMUNITY_ARTICLES.slice(0, 4);
 
   return (
     <section className="py-16 bg-earth-50/40">
@@ -51,7 +26,7 @@ export function CommunityPreview() {
               Farm_lit Community & Living
             </h2>
             <p className="text-xs sm:text-sm text-earth-600 mt-1">
-              Recipes, farming wisdom, seasonal produce guides, and sustainability updates.
+              Recipes, farming wisdom, seasonal produce guides, and sustainability updates from Sathyamangalam.
             </p>
           </div>
           <Link
@@ -63,11 +38,12 @@ export function CommunityPreview() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {articles.map((item, idx) => {
-            const Icon = item.icon;
+          {articles.map((item) => {
+            const Icon = CATEGORY_ICONS[item.category] || BookOpen;
             return (
-              <div
-                key={idx}
+              <Link
+                key={item.id}
+                href={`/community/${item.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden border border-earth-200 hover:border-farm-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-farm-900/15 transition-all duration-300 ease-out flex flex-col cursor-pointer"
               >
                 <div className="relative pt-[55%] bg-earth-100 overflow-hidden">
@@ -89,22 +65,19 @@ export function CommunityPreview() {
                   <div>
                     <span className="text-[10px] font-semibold text-earth-400">{item.readTime}</span>
                     <h3 className="text-sm font-bold text-farm-950 group-hover:text-farm-700 transition-colors line-clamp-2 mt-1">
-                      <Link href="/community">{item.title}</Link>
+                      {item.title}
                     </h3>
                     <p className="text-xs text-earth-500 line-clamp-2 mt-1.5 leading-relaxed">
                       {item.snippet}
                     </p>
                   </div>
 
-                  <Link
-                    href="/community"
-                    className="inline-flex items-center text-xs font-bold text-farm-800 group-hover:text-farm-600 pt-2"
-                  >
+                  <div className="inline-flex items-center text-xs font-bold text-farm-800 group-hover:text-farm-600 pt-2">
                     <span>Read Story</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1 text-farm-600 group-hover:text-farm-700 group-hover:translate-x-1.5 transition-all duration-300" />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

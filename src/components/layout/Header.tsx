@@ -59,7 +59,7 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-farm-600 rounded-lg p-1"
+              className="flex items-center gap-2.5 group outline-none focus:outline-none focus:ring-0 active:outline-none select-none transition-transform active:scale-[0.98]"
             >
               <div className="w-10 h-10 rounded-xl bg-farm-800 text-harvest-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
                 <Sprout className="w-6 h-6" />
