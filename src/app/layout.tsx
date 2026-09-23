@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U',
   },
 };
 
@@ -124,6 +124,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="google-site-verification" content="H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U" />
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
       </head>

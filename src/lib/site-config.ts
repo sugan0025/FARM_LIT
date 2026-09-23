@@ -21,5 +21,6 @@ export const SITE_CONFIG = {
     phone: '+91 8000 456 789',
     address: 'Green Valley Agro Logistics, Hinjawadi Phase 2, Pune, Maharashtra 411057',
   },
-  googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  googleSiteVerification:
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U',
 };
