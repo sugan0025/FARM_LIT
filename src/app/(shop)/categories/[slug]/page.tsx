@@ -7,6 +7,7 @@ import { getCategories, getProducts } from '@/lib/db';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ChevronRight, ArrowLeft } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 interface CategoryPageProps {
   params: { slug: string };
@@ -20,15 +21,18 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return { title: 'Category Not Found' };
   }
 
+  const categoryUrl = `${SITE_CONFIG.baseUrl}/categories/${category.slug}`;
+
   return {
     title: `${category.name} - Fresh Farm Produce | Farm_lit`,
     description: category.description || `Browse our fresh ${category.name} harvested directly from regional farms.`,
     alternates: {
-      canonical: `https://farmlit.com/categories/${category.slug}`,
+      canonical: categoryUrl,
     },
     openGraph: {
       title: `${category.name} | Farm_lit`,
       description: category.description || '',
+      url: categoryUrl,
       images: category.image ? [{ url: category.image }] : [],
     },
   };
@@ -45,6 +49,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
+  const categoryUrl = `${SITE_CONFIG.baseUrl}/categories/${category.slug}`;
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -53,19 +59,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://farmlit.com',
+        item: SITE_CONFIG.baseUrl,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Shop',
-        item: 'https://farmlit.com/shop',
+        item: `${SITE_CONFIG.baseUrl}/shop`,
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: category.name,
-        item: `https://farmlit.com/categories/${category.slug}`,
+        item: categoryUrl,
       },
     ],
   };

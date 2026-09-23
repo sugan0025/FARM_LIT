@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { getProducts, getCategories } from '@/lib/db';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://farmlit.com';
+  const baseUrl = SITE_CONFIG.baseUrl;
 
   const [products, categories] = await Promise.all([
     getProducts(),

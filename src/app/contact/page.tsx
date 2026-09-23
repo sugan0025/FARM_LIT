@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle, Send, Instagram } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -109,6 +110,24 @@ export default function ContactPage() {
                   <strong className="block text-farm-950">Dispatch Hours</strong>
                   <span>Early Morning Express: 6:00 AM – 9:00 AM</span>
                 </div>
+              </div>
+
+              <div className="pt-2 border-t border-earth-100">
+                <a
+                  href={SITE_CONFIG.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-2xl bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 border border-pink-100 hover:border-pink-300 transition-all group"
+                  aria-label="Follow Farm_lit on Instagram"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-600 to-amber-500 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                    <Instagram className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="block text-xs font-bold text-farm-950">Follow on Instagram</span>
+                    <span className="text-[11px] text-pink-700 font-semibold truncate block">@farm_lit • Farm Stories & Daily Harvests</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

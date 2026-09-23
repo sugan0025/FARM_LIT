@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sprout, Mail, Phone, MapPin, CheckCircle2, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { Sprout, Mail, Phone, MapPin, CheckCircle2, ArrowRight, ShieldCheck, Heart, Instagram } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -54,13 +55,26 @@ export function Footer() {
             <p className="text-sm text-earth-400 leading-relaxed max-w-sm">
               Farm_lit delivers crisp, naturally harvested vegetables, seasonal fruits, stone-ground flours, and pure grocery essentials straight from regional farms to your doorstep.
             </p>
-            <div className="flex items-center gap-3 pt-2 text-xs text-earth-300">
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-earth-300">
               <span className="flex items-center gap-1.5 bg-earth-800/80 px-3 py-1.5 rounded-full">
                 <ShieldCheck className="w-4 h-4 text-farm-400" /> 100% Quality Assured
               </span>
               <span className="flex items-center gap-1.5 bg-earth-800/80 px-3 py-1.5 rounded-full">
                 <Heart className="w-4 h-4 text-harvest-400" /> Direct-from-Farmer
               </span>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href={SITE_CONFIG.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white text-xs font-bold shadow-md hover:shadow-lg hover:opacity-95 transition-all transform hover:-translate-y-0.5"
+                aria-label="Follow Farm_lit on Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+                <span>Follow @farm_lit on Instagram</span>
+              </a>
             </div>
           </div>
 
@@ -188,7 +202,7 @@ export function Footer() {
         {/* Bottom copyright & attribution */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-earth-500 gap-4">
           <p>© {new Date().getFullYear()} FARM_LIT Technologies Pvt Ltd. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy-policy" className="hover:underline">
               Privacy
             </Link>
@@ -201,6 +215,15 @@ export function Footer() {
             <Link href="/refund-policy" className="hover:underline">
               Refunds
             </Link>
+            <a
+              href={SITE_CONFIG.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-earth-400 hover:text-white flex items-center gap-1.5 transition-colors"
+            >
+              <Instagram className="w-3.5 h-3.5 text-pink-400" />
+              <span>Instagram</span>
+            </a>
           </div>
         </div>
       </div>

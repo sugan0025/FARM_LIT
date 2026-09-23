@@ -4,13 +4,14 @@ import { getProducts, getCategories } from '@/lib/db';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { ProductFilter } from '@/components/shop/ProductFilter';
 import { Sprout } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Shop Farm Fresh Produce | Vegetables, Fruits & Grocery',
   description:
     'Browse our complete catalog of farm-harvested vegetables, seasonal fruits, organic unpolished pulses, stone-ground flours, and pure grocery essentials.',
   alternates: {
-    canonical: 'https://farmlit.com/shop',
+    canonical: `${SITE_CONFIG.baseUrl}/shop`,
   },
 };
 

@@ -7,6 +7,7 @@ import { ProductDetailActions } from '@/components/shop/ProductDetailActions';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ChevronRight } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 interface ProductPageProps {
   params: { slug: string };
@@ -18,15 +19,18 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     return { title: 'Product Not Found' };
   }
 
+  const productUrl = `${SITE_CONFIG.baseUrl}/shop/${product.slug}`;
+
   return {
     title: `${product.name} (${product.unit}) | Farm_lit`,
     description: product.description.slice(0, 160),
     alternates: {
-      canonical: `https://farmlit.com/shop/${product.slug}`,
+      canonical: productUrl,
     },
     openGraph: {
       title: `${product.name} | Farm_lit Fresh Produce`,
       description: product.description.slice(0, 160),
+      url: productUrl,
       images: product.images[0] ? [{ url: product.images[0] }] : [],
     },
   };
@@ -42,12 +46,16 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const allRelated = await getProducts({ categorySlug: product.category?.slug });
   const related = allRelated.filter((p) => p.id !== product.id).slice(0, 4);
 
+  const productUrl = `${SITE_CONFIG.baseUrl}/shop/${product.slug}`;
+
   // Schema.org Product Structured Data
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: product.images,
+    image: product.images.map((img) =>
+      img.startsWith('http') ? img : `${SITE_CONFIG.baseUrl}${img}`
+    ),
     description: product.description,
     sku: product.SKU,
     brand: {
@@ -56,7 +64,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     },
     offers: {
       '@type': 'Offer',
-      url: `https://farmlit.com/shop/${product.slug}`,
+      url: productUrl,
       priceCurrency: 'INR',
       price: product.price,
       priceValidUntil: '2026-12-31',
@@ -77,15 +85,15 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://farmlit.com' },
-      { '@type': 'ListItem', position: 2, name: 'Shop', item: 'https://farmlit.com/shop' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_CONFIG.baseUrl },
+      { '@type': 'ListItem', position: 2, name: 'Shop', item: `${SITE_CONFIG.baseUrl}/shop` },
       ...(product.category
         ? [
             {
               '@type': 'ListItem',
               position: 3,
               name: product.category.name,
-              item: `https://farmlit.com/categories/${product.category.slug}`,
+              item: `${SITE_CONFIG.baseUrl}/categories/${product.category.slug}`,
             },
           ]
         : []),
@@ -93,7 +101,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         '@type': 'ListItem',
         position: product.category ? 4 : 3,
         name: product.name,
-        item: `https://farmlit.com/shop/${product.slug}`,
+        item: productUrl,
       },
     ],
   };

@@ -8,9 +8,10 @@ import { Footer } from '@/components/layout/Footer';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { UTMListener } from '@/components/ui/UTMListener';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://farmlit.com'),
+  metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
     default: 'Farm_lit | Fresh Vegetables, Fruits, Grains & Everyday Groceries',
     template: '%s | Farm_lit',
@@ -25,14 +26,19 @@ export const metadata: Metadata = {
     'grains and staples',
     'healthy groceries',
     'grocery delivery near me',
+    'Farm_lit',
+    'farmlit',
   ],
   authors: [{ name: 'Farm_lit Produce Cooperative' }],
   creator: 'Farm_lit',
   publisher: 'Farm_lit Technologies',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://farmlit.com',
+    url: SITE_CONFIG.baseUrl,
     siteName: 'Farm_lit',
     title: 'Farm_lit | Fresh. Natural. Everyday.',
     description:
@@ -63,6 +69,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
 
 export default function RootLayout({
@@ -72,18 +81,31 @@ export default function RootLayout({
 }) {
   const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'GroceryStore',
     name: 'Farm_lit',
-    url: 'https://farmlit.com',
-    logo: 'https://farmlit.com/logo.png',
+    url: SITE_CONFIG.baseUrl,
+    logo: `${SITE_CONFIG.baseUrl}/images/categories/vegetables.webp`,
+    image: `${SITE_CONFIG.baseUrl}/images/banners/hero-fresh.webp`,
     description:
-      'B2C grocery e-commerce brand delivering fresh vegetables, fruits, grains, and pantry staples.',
+      'B2C grocery e-commerce brand delivering fresh vegetables, fruits, grains, and pantry staples straight from regional farms.',
+    priceRange: '₹₹',
+    sameAs: [
+      SITE_CONFIG.social.instagram,
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+91-8000-456-789',
-      contactType: 'Customer Support',
+      contactType: 'customer support',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi'],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Green Valley Agro Logistics, Hinjawadi Phase 2',
+      addressLocality: 'Pune',
+      addressRegion: 'Maharashtra',
+      postalCode: '411057',
+      addressCountry: 'IN',
     },
   };
 
@@ -91,10 +113,10 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Farm_lit',
-    url: 'https://farmlit.com',
+    url: SITE_CONFIG.baseUrl,
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://farmlit.com/search?q={search_term_string}',
+      target: `${SITE_CONFIG.baseUrl}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };
