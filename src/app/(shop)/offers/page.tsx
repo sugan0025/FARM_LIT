@@ -43,7 +43,7 @@ export default async function OffersPage() {
             {INITIAL_COUPONS.map((coupon) => (
               <div
                 key={coupon.id}
-                className="bg-white rounded-2xl border-2 border-dashed border-harvest-400 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="group bg-white rounded-2xl border-2 border-dashed border-harvest-400 p-6 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-harvest-500 hover:bg-harvest-50/20 transition-all duration-300 ease-out flex flex-col justify-between space-y-4 cursor-default"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">

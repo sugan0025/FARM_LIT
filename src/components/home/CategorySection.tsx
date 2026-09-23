@@ -34,7 +34,7 @@ export function CategorySection({ categories }: CategorySectionProps) {
             <Link
               key={category.id}
               href={`/categories/${category.slug}`}
-              className="group relative rounded-2xl overflow-hidden bg-white border border-earth-200 shadow-sm hover:shadow-lift hover:border-farm-400 transition-all duration-300 flex flex-col"
+              className="group relative rounded-2xl overflow-hidden bg-white border border-earth-200 shadow-sm hover:-translate-y-2 hover:shadow-2xl hover:shadow-farm-950/15 hover:border-farm-500 transition-all duration-300 ease-out flex flex-col cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative pt-[70%] bg-earth-100 overflow-hidden">
@@ -43,14 +43,15 @@ export function CategorySection({ categories }: CategorySectionProps) {
                   alt={category.name}
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-farm-950/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
 
               {/* Title & Description */}
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-farm-950 group-hover:text-farm-700 transition-colors">
+                  <h3 className="text-base font-bold text-farm-950 group-hover:text-farm-700 transition-colors duration-200">
                     {category.name}
                   </h3>
                   {category.description && (
@@ -59,9 +60,9 @@ export function CategorySection({ categories }: CategorySectionProps) {
                     </p>
                   )}
                 </div>
-                <div className="mt-3 flex items-center text-xs font-bold text-farm-800">
+                <div className="mt-3 flex items-center text-xs font-bold text-farm-800 group-hover:text-farm-600">
                   <span>Browse Category</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 ml-1 text-farm-600 group-hover:text-farm-700 group-hover:translate-x-2 transition-all duration-300" />
                 </div>
               </div>
             </Link>

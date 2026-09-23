@@ -68,17 +68,18 @@ export function CommunityPreview() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl overflow-hidden border border-earth-200 hover:border-farm-300 hover:shadow-lift transition-all duration-300 flex flex-col"
+                className="group bg-white rounded-2xl overflow-hidden border border-earth-200 hover:border-farm-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-farm-900/15 transition-all duration-300 ease-out flex flex-col cursor-pointer"
               >
-                <div className="relative pt-[55%] bg-earth-100">
+                <div className="relative pt-[55%] bg-earth-100 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-farm-900 text-[10px] font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-farm-950/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute top-3 left-3 bg-white/95 group-hover:bg-white backdrop-blur-sm text-farm-900 text-[10px] font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm transition-all duration-200">
                     <Icon className="w-3 h-3 text-farm-700" />
                     <span>{item.category}</span>
                   </div>
@@ -87,7 +88,7 @@ export function CommunityPreview() {
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
                   <div>
                     <span className="text-[10px] font-semibold text-earth-400">{item.readTime}</span>
-                    <h3 className="text-sm font-bold text-farm-950 hover:text-farm-700 transition-colors line-clamp-2 mt-1">
+                    <h3 className="text-sm font-bold text-farm-950 group-hover:text-farm-700 transition-colors line-clamp-2 mt-1">
                       <Link href="/community">{item.title}</Link>
                     </h3>
                     <p className="text-xs text-earth-500 line-clamp-2 mt-1.5 leading-relaxed">
@@ -97,9 +98,10 @@ export function CommunityPreview() {
 
                   <Link
                     href="/community"
-                    className="inline-flex items-center text-xs font-bold text-farm-800 hover:text-farm-600 pt-2"
+                    className="inline-flex items-center text-xs font-bold text-farm-800 group-hover:text-farm-600 pt-2"
                   >
-                    Read Story <ArrowRight className="w-3 h-3 ml-1" />
+                    <span>Read Story</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-1 text-farm-600 group-hover:text-farm-700 group-hover:translate-x-1.5 transition-all duration-300" />
                   </Link>
                 </div>
               </div>

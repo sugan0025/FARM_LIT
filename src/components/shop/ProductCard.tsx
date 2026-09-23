@@ -24,16 +24,16 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
   return (
     <>
-      <div className="group bg-white rounded-2xl border border-earth-200 hover:border-farm-300 hover:shadow-lift transition-all duration-300 flex flex-col overflow-hidden relative">
+      <div className="group bg-white rounded-2xl border border-earth-200 hover:border-farm-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-farm-900/10 transition-all duration-300 ease-out flex flex-col overflow-hidden relative cursor-pointer">
         {/* Badges Overlay */}
         <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5 pointer-events-none">
           {product.discountPercentage > 0 && (
-            <span className="bg-harvest-500 text-slate-950 font-extrabold text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full shadow-sm">
+            <span className="bg-harvest-500 text-slate-950 font-extrabold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full shadow-sm">
               {product.discountPercentage}% OFF
             </span>
           )}
           {isLowStock && (
-            <span className="bg-amber-100 text-amber-900 font-bold text-[10px] px-2 py-0.5 rounded-full shadow-sm">
+            <span className="bg-amber-100 text-amber-900 font-bold text-[10px] px-2.5 py-1 rounded-full shadow-sm">
               Only {product.stockQuantity} left
             </span>
           )}
@@ -42,7 +42,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         {/* Quick View Button on Card Hover */}
         <button
           onClick={() => setQuickViewOpen(true)}
-          className="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm text-earth-700 hover:text-farm-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-3 right-3 z-10 bg-white/95 backdrop-blur-sm text-earth-700 hover:text-white hover:bg-farm-700 p-2.5 rounded-full shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110 active:scale-95 transition-all duration-300 ease-out"
           aria-label={`Quick view ${product.name}`}
         >
           <Eye className="w-4 h-4" />
@@ -59,8 +59,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             fill
             priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-farm-950/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </Link>
 
         {/* Card Content */}
@@ -77,7 +78,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             {/* Product Name */}
             <Link
               href={`/shop/${product.slug}`}
-              className="text-sm sm:text-base font-bold text-farm-950 hover:text-farm-700 transition-colors line-clamp-1"
+              className="text-sm sm:text-base font-bold text-farm-950 group-hover:text-farm-700 transition-colors line-clamp-1"
             >
               {product.name}
             </Link>
@@ -144,7 +145,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             ) : (
               <button
                 onClick={() => addToCart(product, 1)}
-                className="inline-flex items-center gap-1.5 bg-farm-800 hover:bg-farm-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-all shadow-sm active:scale-95"
+                className="inline-flex items-center gap-1.5 bg-farm-800 hover:bg-farm-700 hover:shadow-md hover:scale-105 active:scale-95 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-all shadow-sm"
                 aria-label={`Add ${product.name} to basket`}
               >
                 <ShoppingBag className="w-3.5 h-3.5" />

@@ -50,12 +50,12 @@ export function ValueProps() {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-earth-50/70 border border-earth-200 hover:border-farm-300 hover:bg-white hover:shadow-lift transition-all duration-300 flex flex-col items-center text-center space-y-3"
+                className="group p-6 rounded-2xl bg-earth-50/70 border border-earth-200 hover:border-farm-400 hover:bg-white hover:-translate-y-2 hover:shadow-xl hover:shadow-farm-900/10 transition-all duration-300 ease-out flex flex-col items-center text-center space-y-3 cursor-default"
               >
-                <div className="w-12 h-12 rounded-2xl bg-farm-100 text-farm-800 flex items-center justify-center shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-farm-100 text-farm-800 group-hover:bg-farm-700 group-hover:text-white group-hover:scale-110 flex items-center justify-center shadow-sm transition-all duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold text-farm-950">{item.title}</h3>
+                <h3 className="text-base font-bold text-farm-950 group-hover:text-farm-700 transition-colors">{item.title}</h3>
                 <p className="text-xs text-earth-600 leading-relaxed">{item.description}</p>
               </div>
             );

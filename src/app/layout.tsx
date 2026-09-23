@@ -13,15 +13,25 @@ import { SITE_CONFIG } from '@/lib/site-config';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
-    default: 'Farm_lit | Fresh Vegetables, Fruits, Grains & Everyday Groceries',
+    default: 'Farm_lit | Fresh Vegetables, Fruits & Groceries in Sathyamangalam',
     template: '%s | Farm_lit',
   },
   description:
-    'Order fresh vegetables, fruits, stone-ground flours, and everyday grocery essentials online from Farm_lit. Harvested fresh from local farms with doorstep delivery.',
+    'Order fresh farm vegetables, seasonal fruits, stone-ground flours, and grocery essentials online in Sathyamangalam, Erode, and Western Tamil Nadu from Farm_lit. Daily harvest with doorstep delivery.',
   keywords: [
+    'farm lit sathyamangalam',
+    'fresh vegetables sathyamangalam',
+    'organic vegetables sathyamangalam',
+    'grocery delivery sathyamangalam',
+    'fruits and vegetables erode',
+    'organic grocery store tamil nadu',
+    'farm fresh produce sathyamangalam',
+    'bhavani river farm vegetables',
+    'sathyamangalam grocery store online',
+    'erode grocery delivery',
+    'gobichettipalayam organic groceries',
     'fresh vegetables online',
     'fresh fruits delivery',
-    'organic grocery store',
     'farm fresh groceries',
     'grains and staples',
     'healthy groceries',
@@ -40,22 +50,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_CONFIG.baseUrl,
     siteName: 'Farm_lit',
-    title: 'Farm_lit | Fresh. Natural. Everyday.',
+    title: 'Farm_lit | Fresh Produce in Sathyamangalam',
     description:
-      'Farm fresh vegetables, seasonal fruits, stone-ground flour, and pantry staples straight from regional farms to your kitchen.',
+      'Farm fresh vegetables, seasonal fruits, cold-pressed oils, and grocery staples directly from local farmers in Sathyamangalam and Erode belt.',
     images: [
       {
         url: '/images/banners/hero-fresh.webp',
         width: 1200,
         height: 630,
-        alt: 'Farm_lit Fresh Harvest Vegetables and Fruits',
+        alt: 'Farm_lit Fresh Harvest Vegetables and Fruits Sathyamangalam',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Farm_lit | Fresh Vegetables & Everyday Essentials',
-    description: 'Fresh vegetables, fruits, and staples delivered directly from regional farms.',
+    title: 'Farm_lit | Fresh Vegetables & Groceries Sathyamangalam',
+    description: 'Fresh vegetables, fruits, and staples delivered directly from regional farms in Sathyamangalam & Erode.',
     creator: '@farmlit',
   },
   robots: {
@@ -95,7 +105,7 @@ export default function RootLayout({
     logo: `${SITE_CONFIG.baseUrl}/images/categories/vegetables.webp`,
     image: `${SITE_CONFIG.baseUrl}/images/banners/hero-fresh.webp`,
     description:
-      'B2C grocery e-commerce brand delivering fresh vegetables, fruits, grains, and pantry staples straight from regional farms.',
+      'B2C grocery e-commerce brand delivering fresh vegetables, fruits, grains, and pantry staples straight from regional farms in Sathyamangalam, Tamil Nadu.',
     priceRange: '₹₹',
     sameAs: [
       SITE_CONFIG.social.instagram,
@@ -105,16 +115,28 @@ export default function RootLayout({
       telephone: '+91-8000-456-789',
       contactType: 'customer support',
       areaServed: 'IN',
-      availableLanguage: ['English', 'Hindi'],
+      availableLanguage: ['English', 'Tamil'],
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Green Valley Agro Logistics, Hinjawadi Phase 2',
-      addressLocality: 'Pune',
-      addressRegion: 'Maharashtra',
-      postalCode: '411057',
+      streetAddress: 'Bhavani River Road',
+      addressLocality: 'Sathyamangalam',
+      addressRegion: 'Tamil Nadu',
+      postalCode: '638401',
       addressCountry: 'IN',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 11.5034,
+      longitude: 77.2441,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Sathyamangalam' },
+      { '@type': 'City', name: 'Gobichettipalayam' },
+      { '@type': 'City', name: 'Bhavanisagar' },
+      { '@type': 'AdministrativeArea', name: 'Erode District' },
+      { '@type': 'State', name: 'Tamil Nadu' },
+    ],
   };
 
   const websiteSchema = {

@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Farm_lit | Fresh. Natural. Everyday.',
+    name: 'Farm_lit | Fresh Produce in Sathyamangalam',
     short_name: 'Farm_lit',
     description:
-      'Farm-harvested fresh vegetables, fruits, stone-ground flours, and grocery essentials delivered to your doorstep.',
+      'Farm-harvested fresh vegetables, fruits, stone-ground flours, and grocery essentials delivered in Sathyamangalam & Erode.',
     start_url: '/',
     display: 'standalone',
     background_color: '#fbfaf8',

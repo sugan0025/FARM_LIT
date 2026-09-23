@@ -214,7 +214,7 @@ export default function CheckoutPage() {
                     name="deliveryCity"
                     value={formData.deliveryCity}
                     onChange={handleChange}
-                    placeholder="Pune"
+                    placeholder="Sathyamangalam"
                     className="w-full bg-earth-50 border border-earth-200 rounded-xl px-3.5 py-2.5 text-xs text-earth-900 focus:outline-none focus:ring-2 focus:ring-farm-600"
                   />
                 </div>
@@ -227,7 +227,7 @@ export default function CheckoutPage() {
                     name="deliveryState"
                     value={formData.deliveryState}
                     onChange={handleChange}
-                    placeholder="Maharashtra"
+                    placeholder="Tamil Nadu"
                     className="w-full bg-earth-50 border border-earth-200 rounded-xl px-3.5 py-2.5 text-xs text-earth-900 focus:outline-none focus:ring-2 focus:ring-farm-600"
                   />
                 </div>

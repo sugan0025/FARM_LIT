@@ -15,7 +15,7 @@ export function DemoReviews() {
             What Our Community Says
           </h2>
           <p className="text-xs sm:text-sm text-earth-500 mt-1">
-            Genuine experiences from early neighborhood taste testers across Pune and Mumbai.
+            Genuine experiences from neighborhood families across Sathyamangalam, Gobichettipalayam, and Erode.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export function DemoReviews() {
           {DEMO_REVIEWS.map((review) => (
             <div
               key={review.id}
-              className="p-6 rounded-2xl bg-earth-50/60 border border-earth-200 hover:border-farm-300 transition-all flex flex-col justify-between space-y-4"
+              className="group p-6 rounded-2xl bg-earth-50/60 border border-earth-200 hover:border-farm-400 hover:bg-white hover:-translate-y-2 hover:shadow-xl hover:shadow-farm-900/10 transition-all duration-300 ease-out flex flex-col justify-between space-y-4 cursor-default"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">

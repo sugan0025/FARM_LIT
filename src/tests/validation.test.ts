@@ -60,9 +60,9 @@ describe('Zod Input Validation Schemas', () => {
       customerEmail: 'priya@example.com',
       customerPhone: '9876543210',
       deliveryStreet: 'Flat 302, Green Meadows',
-      deliveryCity: 'Pune',
-      deliveryState: 'Maharashtra',
-      deliveryPostalCode: '411001',
+      deliveryCity: 'Sathyamangalam',
+      deliveryState: 'Tamil Nadu',
+      deliveryPostalCode: '638401',
       deliveryCountry: 'India',
       paymentMethod: 'COD' as const,
     };

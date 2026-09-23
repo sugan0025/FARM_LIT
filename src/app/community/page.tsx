@@ -89,17 +89,18 @@ export default function CommunityPage() {
             return (
               <article
                 key={idx}
-                className="bg-white rounded-3xl overflow-hidden border border-earth-200 shadow-sm hover:shadow-lift hover:border-farm-300 transition-all duration-300 flex flex-col"
+                className="group bg-white rounded-3xl overflow-hidden border border-earth-200 shadow-sm hover:border-farm-400 hover:-translate-y-2.5 hover:shadow-2xl hover:shadow-farm-900/15 transition-all duration-300 ease-out flex flex-col cursor-pointer"
               >
-                <div className="relative pt-[60%] bg-earth-100">
+                <div className="relative pt-[60%] bg-earth-100 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-3 left-3 bg-white/95 text-farm-900 text-[11px] font-black px-3 py-1 rounded-full flex items-center gap-1.5 shadow">
+                  <div className="absolute inset-0 bg-gradient-to-t from-farm-950/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute top-3 left-3 bg-white/95 group-hover:bg-white text-farm-900 text-[11px] font-black px-3 py-1 rounded-full flex items-center gap-1.5 shadow transition-all duration-200">
                     <Icon className="w-3.5 h-3.5 text-farm-700" />
                     <span>{item.category}</span>
                   </div>
@@ -111,7 +112,7 @@ export default function CommunityPage() {
                       <span>{item.date}</span>
                       <span>{item.readTime}</span>
                     </div>
-                    <h2 className="text-base font-bold text-farm-950 leading-snug">
+                    <h2 className="text-base font-bold text-farm-950 group-hover:text-farm-700 transition-colors leading-snug">
                       {item.title}
                     </h2>
                     <p className="text-xs text-earth-600 leading-relaxed mt-2 line-clamp-3">
@@ -119,9 +120,9 @@ export default function CommunityPage() {
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-earth-100 flex items-center justify-between text-xs font-bold text-farm-800">
+                  <div className="pt-3 border-t border-earth-100 flex items-center justify-between text-xs font-bold text-farm-800 group-hover:text-farm-600">
                     <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 text-farm-600 group-hover:text-farm-700 group-hover:translate-x-2 transition-all duration-300" />
                   </div>
                 </div>
               </article>

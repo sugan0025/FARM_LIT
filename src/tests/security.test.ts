@@ -34,9 +34,9 @@ describe('Security & Vulnerability Defenses', () => {
           customerEmail: payload,
           customerPhone: '9876543210',
           deliveryStreet: 'Safe Street',
-          deliveryCity: 'Pune',
-          deliveryState: 'Maharashtra',
-          deliveryPostalCode: '411001',
+          deliveryCity: 'Sathyamangalam',
+          deliveryState: 'Tamil Nadu',
+          deliveryPostalCode: '638401',
         });
         expect(res.success).toBe(false);
       }
@@ -58,9 +58,9 @@ describe('Security & Vulnerability Defenses', () => {
           customerEmail: payload,
           customerPhone: '9876543210',
           deliveryStreet: payload,
-          deliveryCity: 'Pune',
-          deliveryState: 'Maharashtra',
-          deliveryPostalCode: '411001',
+          deliveryCity: 'Sathyamangalam',
+          deliveryState: 'Tamil Nadu',
+          deliveryPostalCode: '638401',
         });
         // Email must fail valid email format
         expect(res.success).toBe(false);

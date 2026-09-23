@@ -16,7 +16,7 @@ export function HeroSection() {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-farm-100/80 border border-farm-200 px-3.5 py-1.5 rounded-full text-xs font-bold text-farm-900 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-farm-700" />
-              <span>Direct Farm-to-Table Grocery Delivery</span>
+              <span>Direct Farm-to-Table Grocery Delivery • Sathyamangalam</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-farm-950 tracking-tight leading-[1.1]">
@@ -80,7 +80,7 @@ export function HeroSection() {
               </div>
 
               {/* Floating Floating Stat Card */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-earth-100 flex items-center gap-3.5 max-w-[220px]">
+              <div className="absolute -bottom-6 -left-4 sm:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-earth-100 flex items-center gap-3.5 max-w-[220px] hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-default">
                 <div className="w-11 h-11 rounded-xl bg-farm-100 text-farm-800 flex items-center justify-center font-black text-lg">
                   100%
                 </div>
@@ -91,7 +91,7 @@ export function HeroSection() {
               </div>
 
               {/* Floating Review Card */}
-              <div className="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-earth-100 flex items-center gap-2.5">
+              <div className="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-earth-100 flex items-center gap-2.5 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-default">
                 <div className="text-amber-500 font-bold text-sm flex items-center gap-1">
                   ★ 4.9
                 </div>

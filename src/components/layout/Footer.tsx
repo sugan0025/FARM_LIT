@@ -53,7 +53,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-earth-400 leading-relaxed max-w-sm">
-              Farm_lit delivers crisp, naturally harvested vegetables, seasonal fruits, stone-ground flours, and pure grocery essentials straight from regional farms to your doorstep.
+              Farm_lit delivers crisp, naturally harvested vegetables, seasonal fruits, stone-ground flours, and pure grocery essentials from local growers in Sathyamangalam and Erode straight to your doorstep.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-earth-300">
               <span className="flex items-center gap-1.5 bg-earth-800/80 px-3 py-1.5 rounded-full">
@@ -193,7 +193,7 @@ export function Footer() {
                 <Phone className="w-3.5 h-3.5 text-farm-400" /> +91 8000 456 789
               </p>
               <p className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-farm-400" /> Green Valley Agro Hub, Pune, India
+                <MapPin className="w-3.5 h-3.5 text-farm-400" /> Bhavani River Road, Sathyamangalam, Tamil Nadu 638401
               </p>
             </div>
           </div>

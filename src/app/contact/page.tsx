@@ -98,7 +98,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <strong className="block text-farm-950">Fulfillment Hub & Dispatch</strong>
-                  <span>Green Valley Agro Logistics, Hinjawadi Phase 2, Pune, Maharashtra 411057</span>
+                  <span>Farm_lit Agro Fulfillment Hub, Bhavani River Road, Sathyamangalam, Erode District, Tamil Nadu 638401</span>
                 </div>
               </div>
 

@@ -31,7 +31,7 @@ export function OffersBanner() {
 
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Promo Card 1 */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex flex-col justify-between space-y-3">
+            <div className="bg-white/10 hover:bg-white/15 hover:border-white/30 hover:-translate-y-1.5 hover:shadow-2xl backdrop-blur-md border border-white/15 p-4 rounded-2xl flex flex-col justify-between space-y-3 transition-all duration-300 ease-out">
               <div>
                 <span className="text-xs font-bold text-harvest-400">First Order Bonus</span>
                 <h4 className="text-lg font-black text-white mt-0.5">10% OFF Storewide</h4>
@@ -60,7 +60,7 @@ export function OffersBanner() {
             </div>
 
             {/* Promo Card 2 */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl flex flex-col justify-between space-y-3">
+            <div className="bg-white/10 hover:bg-white/15 hover:border-white/30 hover:-translate-y-1.5 hover:shadow-2xl backdrop-blur-md border border-white/15 p-4 rounded-2xl flex flex-col justify-between space-y-3 transition-all duration-300 ease-out">
               <div>
                 <span className="text-xs font-bold text-harvest-400">Zero Shipping</span>
                 <h4 className="text-lg font-black text-white mt-0.5">FREE Delivery</h4>
