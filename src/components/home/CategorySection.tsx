@@ -10,7 +10,7 @@ interface CategorySectionProps {
 
 export function CategorySection({ categories }: CategorySectionProps) {
   return (
-    <section className="py-14 bg-earth-50/50">
+    <section id="categories" className="scroll-mt-20 py-14 bg-earth-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
           <div>

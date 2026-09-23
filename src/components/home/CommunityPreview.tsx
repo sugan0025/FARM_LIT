@@ -15,7 +15,7 @@ export function CommunityPreview() {
   const articles = COMMUNITY_ARTICLES.slice(0, 4);
 
   return (
-    <section className="py-16 bg-earth-50/40">
+    <section id="community" className="scroll-mt-20 py-16 bg-earth-50/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
           <div>

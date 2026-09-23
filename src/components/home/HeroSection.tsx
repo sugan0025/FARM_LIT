@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles, ShieldCheck, Truck, Leaf } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-farm-50/70 via-white to-white py-12 md:py-20">
+    <section id="hero" className="relative overflow-hidden bg-gradient-to-b from-farm-50/70 via-white to-white py-12 md:py-20">
       {/* Decorative ambient background blur */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-farm-200/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-harvest-200/30 rounded-full blur-3xl pointer-events-none" />

@@ -4,7 +4,7 @@ import { DEMO_REVIEWS } from '@/lib/products-data';
 
 export function DemoReviews() {
   return (
-    <section className="py-16 bg-white border-b border-earth-200">
+    <section id="reviews" className="scroll-mt-20 py-16 bg-white border-b border-earth-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 bg-earth-100 text-earth-700 text-[11px] font-semibold px-3 py-1 rounded-full mb-2">

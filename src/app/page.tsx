@@ -9,6 +9,7 @@ import { OffersBanner } from '@/components/home/OffersBanner';
 import { CommunityPreview } from '@/components/home/CommunityPreview';
 import { DemoReviews } from '@/components/home/DemoReviews';
 import { ProductCard } from '@/components/shop/ProductCard';
+import { ScrollSpy } from '@/components/home/ScrollSpy';
 
 export const revalidate = 60; // ISR revalidate every 60s
 
@@ -20,6 +21,9 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-0">
+      {/* Dynamic URL Hash Scroll-Spy */}
+      <ScrollSpy />
+
       {/* 1. Hero Section */}
       <HeroSection />
 
@@ -27,7 +31,7 @@ export default async function HomePage() {
       <CategorySection categories={categories} />
 
       {/* 3. Featured Products Section */}
-      <section className="py-16 bg-white">
+      <section id="featured" className="scroll-mt-20 py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
             <div>

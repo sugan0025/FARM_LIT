@@ -14,7 +14,7 @@ export function OffersBanner() {
   };
 
   return (
-    <section className="py-12 bg-gradient-to-r from-farm-900 via-farm-800 to-farm-900 text-white relative overflow-hidden">
+    <section id="offers" className="scroll-mt-20 py-12 bg-gradient-to-r from-farm-900 via-farm-800 to-farm-900 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-3">
