@@ -13,21 +13,24 @@ import { SITE_CONFIG } from '@/lib/site-config';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
-    default: 'Farm_lit | Fresh Vegetables, Fruits & Groceries in Sathyamangalam',
+    default: 'Organic Vegetables Sathyamangalam | Farm_lit Fresh Produce & Grocery Delivery',
     template: '%s | Farm_lit',
   },
   description:
-    'Order fresh farm vegetables, seasonal fruits, stone-ground flours, and grocery essentials online in Sathyamangalam, Erode, and Western Tamil Nadu from Farm_lit. Daily harvest with doorstep delivery.',
+    'Buy fresh organic vegetables, seasonal fruits, stone-ground flours, and grocery essentials online in Sathyamangalam, Bhavani, and Erode from Farm_lit. Daily farm harvest with same-day doorstep delivery.',
   keywords: [
-    'farm lit sathyamangalam',
-    'fresh vegetables sathyamangalam',
     'organic vegetables sathyamangalam',
+    'fresh vegetables sathyamangalam',
+    'farm lit sathyamangalam',
+    'farmlit sathyamangalam',
+    'farmlit',
+    'Farm_lit',
     'grocery delivery sathyamangalam',
-    'fruits and vegetables erode',
     'organic grocery store tamil nadu',
     'farm fresh produce sathyamangalam',
     'bhavani river farm vegetables',
     'sathyamangalam grocery store online',
+    'fruits and vegetables erode',
     'erode grocery delivery',
     'gobichettipalayam organic groceries',
     'fresh vegetables online',
@@ -36,8 +39,6 @@ export const metadata: Metadata = {
     'grains and staples',
     'healthy groceries',
     'grocery delivery near me',
-    'Farm_lit',
-    'farmlit',
   ],
   authors: [{ name: 'Farm_lit Produce Cooperative' }],
   creator: 'Farm_lit',
@@ -50,22 +51,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_CONFIG.baseUrl,
     siteName: 'Farm_lit',
-    title: 'Farm_lit | Fresh Produce in Sathyamangalam',
+    title: 'Organic Vegetables Sathyamangalam | Farm_lit Fresh Produce',
     description:
-      'Farm fresh vegetables, seasonal fruits, cold-pressed oils, and grocery staples directly from local farmers in Sathyamangalam and Erode belt.',
+      'Direct farm-to-table organic vegetables, seasonal fruits, cold-pressed oils, and grocery staples from local farmers in Sathyamangalam, Bhavani, and Erode.',
     images: [
       {
         url: '/images/banners/hero-fresh.webp',
         width: 1200,
         height: 630,
-        alt: 'Farm_lit Fresh Harvest Vegetables and Fruits Sathyamangalam',
+        alt: 'Farm_lit Organic Vegetables and Fresh Produce Sathyamangalam',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Farm_lit | Fresh Vegetables & Groceries Sathyamangalam',
-    description: 'Fresh vegetables, fruits, and staples delivered directly from regional farms in Sathyamangalam & Erode.',
+    title: 'Organic Vegetables Sathyamangalam | Farm_lit',
+    description: 'Fresh organic vegetables, fruits, and staples delivered directly from regional farms in Sathyamangalam & Erode.',
     creator: '@farmlit',
   },
   robots: {
@@ -101,11 +102,12 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'GroceryStore',
     name: 'Farm_lit',
+    alternateName: 'Farm_lit Organic Vegetables Sathyamangalam',
     url: SITE_CONFIG.baseUrl,
     logo: `${SITE_CONFIG.baseUrl}/images/categories/vegetables.webp`,
     image: `${SITE_CONFIG.baseUrl}/images/banners/hero-fresh.webp`,
     description:
-      'B2C grocery e-commerce brand delivering fresh vegetables, fruits, grains, and pantry staples straight from regional farms in Sathyamangalam, Tamil Nadu.',
+      'Farm-to-table organic grocery platform delivering fresh vegetables, fruits, grains, and pantry essentials directly from regional farms in Sathyamangalam, Tamil Nadu.',
     priceRange: '₹₹',
     sameAs: [
       SITE_CONFIG.social.instagram,
@@ -137,6 +139,24 @@ export default function RootLayout({
       { '@type': 'AdministrativeArea', name: 'Erode District' },
       { '@type': 'State', name: 'Tamil Nadu' },
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Organic Vegetables & Fresh Farm Groceries Sathyamangalam',
+      itemListElement: [
+        {
+          '@type': 'OfferCatalog',
+          name: 'Organic Vegetables Sathyamangalam',
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'Seasonal Farm Fruits',
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'A2 Desi Cow Ghee & Wildflower Honey',
+        },
+      ],
+    },
   };
 
   const websiteSchema = {

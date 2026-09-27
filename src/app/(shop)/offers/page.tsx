@@ -5,11 +5,15 @@ import { Tag, Sparkles, Percent, Truck, Check, ArrowRight } from 'lucide-react';
 import { INITIAL_COUPONS } from '@/lib/products-data';
 import { getProducts } from '@/lib/db';
 import { ProductCard } from '@/components/shop/ProductCard';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Special Deals & Promo Coupons | Farm_lit',
+  title: 'Special Harvest Offers & Promo Coupons | Farm_lit Sathyamangalam',
   description:
-    'Exclusive harvest discounts, promo coupons, and bundle savings on farm-fresh vegetables, organic fruits, and kitchen essentials.',
+    'Exclusive harvest discounts, promo coupons, and bundle savings on farm-fresh organic vegetables, seasonal fruits, and kitchen essentials in Sathyamangalam.',
+  alternates: {
+    canonical: `${SITE_CONFIG.baseUrl}/offers`,
+  },
 };
 
 export default async function OffersPage() {

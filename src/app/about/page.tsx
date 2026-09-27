@@ -5,9 +5,12 @@ import Link from 'next/link';
 import { Sprout, ShieldCheck, Heart, Award, Users, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Farm_lit | Fresh, Honest & Sustainable Grocery Produce',
+  title: 'Organic Vegetables Sathyamangalam | Farm_lit Direct Farm Produce',
   description:
-    'Learn about Farm_lit’s mission: providing pure farm-fresh vegetables, seasonal fruits, and staple grains directly from regional growers without artificial preservation.',
+    'Farm_lit delivers 100% natural, farm-fresh organic vegetables, seasonal fruits, and grocery essentials across Sathyamangalam, Bhavani, and Erode directly from local growers.',
+  alternates: {
+    canonical: 'https://farmlit.vercel.app/about',
+  },
 };
 
 export default function AboutPage() {
@@ -17,13 +20,13 @@ export default function AboutPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-farm-700 bg-farm-50 px-3 py-1 rounded-full">
-            Our Origin Story
+            Local Farm-to-Table Sathyamangalam
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-farm-950">
-            Reconnecting Your Table to Natural Farm Harvests
+            Organic Vegetables & Fresh Farm Produce in Sathyamangalam
           </h1>
           <p className="text-sm sm:text-base text-earth-600 leading-relaxed">
-            Farm_lit began with a straightforward observation: grocery store vegetables were spending days in artificial cold warehouses and losing essential vitality, while smallholder farmers were getting squeezed by middlemen.
+            Farm_lit delivers 100% natural, chemical-free organic vegetables, seasonal fruits, stone-ground flours, and pure A2 cow ghee directly from local growers in Sathyamangalam and the Bhavani River basin straight to your doorstep.
           </p>
         </div>
 

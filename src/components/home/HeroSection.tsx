@@ -20,14 +20,14 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-farm-950 tracking-tight leading-[1.1]">
-              Fresh. Natural. <br />
+              Organic Vegetables <br />
               <span className="text-farm-700 underline decoration-harvest-400 decoration-wavy decoration-2">
-                Everyday.
+                in Sathyamangalam.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-earth-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Fresh vegetables, fruits, grains and everyday grocery essentials for your home. Pure, honest produce sourced directly from dedicated organic regional growers.
+              Buy 100% farm-fresh organic vegetables, seasonal fruits, stone-ground flours, and grocery essentials online in Sathyamangalam. Harvested daily along the Bhavani River belt and delivered to your doorstep within 24 hours.
             </p>
 
             {/* CTAs */}

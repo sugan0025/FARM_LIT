@@ -21,17 +21,26 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return { title: 'Category Not Found' };
   }
 
+  const isVegetables = params.slug === 'vegetables';
   const categoryUrl = `${SITE_CONFIG.baseUrl}/categories/${category.slug}`;
 
+  const title = isVegetables
+    ? 'Organic Vegetables Sathyamangalam | Buy Fresh Vegetables Online - Farm_lit'
+    : `${category.name} - Fresh Farm Produce | Farm_lit`;
+
+  const description = isVegetables
+    ? 'Order 100% farm-fresh organic vegetables online in Sathyamangalam, Bhavanisagar, and Erode. Chemical-free daily harvest delivered within 24 hours.'
+    : category.description || `Browse our fresh ${category.name} harvested directly from regional farms.`;
+
   return {
-    title: `${category.name} - Fresh Farm Produce | Farm_lit`,
-    description: category.description || `Browse our fresh ${category.name} harvested directly from regional farms.`,
+    title,
+    description,
     alternates: {
       canonical: categoryUrl,
     },
     openGraph: {
-      title: `${category.name} | Farm_lit`,
-      description: category.description || '',
+      title,
+      description,
       url: categoryUrl,
       images: category.image ? [{ url: category.image }] : [],
     },
@@ -107,9 +116,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <span className="text-xs font-black uppercase tracking-wider text-harvest-400 bg-white/10 px-3 py-1 rounded-full">
               Produce Category
             </span>
-            <h1 className="text-3xl sm:text-5xl font-black">{category.name}</h1>
+            <h1 className="text-3xl sm:text-5xl font-black">
+              {category.slug === 'vegetables'
+                ? 'Organic Vegetables in Sathyamangalam'
+                : category.name}
+            </h1>
             <p className="text-sm sm:text-base text-farm-100 leading-relaxed">
-              {category.description}
+              {category.slug === 'vegetables'
+                ? '100% farm-fresh, chemical-free organic vegetables harvested at sunrise across Sathyamangalam, Bhavanisagar, and Gobichettipalayam with daily doorstep delivery.'
+                : category.description}
             </p>
           </div>
         </div>
