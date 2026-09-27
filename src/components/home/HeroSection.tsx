@@ -21,7 +21,7 @@ export function HeroSection() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-farm-950 tracking-tight leading-[1.1]">
               Organic Vegetables <br />
-              <span className="text-farm-700 underline decoration-harvest-400 decoration-wavy decoration-2">
+              <span className="text-farm-700">
                 in Sathyamangalam.
               </span>
             </h1>
