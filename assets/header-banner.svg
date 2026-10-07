@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="250" viewBox="0 0 1200 250" fill="none">
+  <defs>
+    <linearGradient id="farmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2312" />
+      <stop offset="50%" stop-color="#0d3319" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+    <linearGradient id="farmBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+    <pattern id="dotGridFarm" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#4ade80" fill-opacity="0.12" />
+    </pattern>
+    <filter id="glowFarm">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="250" rx="16" fill="url(#farmBg)" />
+  <rect width="1200" height="250" fill="url(#dotGridFarm)" />
+
+  <!-- Outer Border Frame -->
+  <rect x="2" y="2" width="1196" height="246" rx="15" fill="none" stroke="url(#farmBorder)" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <!-- Dynamic Glowing Swell Curves -->
+  <path d="M 0 185 C 260 135, 520 225, 820 155 C 990 115, 1110 185, 1200 175 L 1200 250 L 0 250 Z" fill="#22c55e" fill-opacity="0.08"/>
+  <path d="M 0 200 C 310 155, 620 215, 920 170 C 1070 145, 1160 190, 1200 185" fill="none" stroke="#4ade80" stroke-width="2" stroke-opacity="0.4" filter="url(#glowFarm)"/>
+  <path d="M 0 220 C 210 175, 570 235, 870 190 C 1040 165, 1130 205, 1200 200" fill="none" stroke="#eab308" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Logo Emblem Badge -->
+  <g transform="translate(60, 48)">
+    <rect width="72" height="72" rx="18" fill="#14532d" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.8"/>
+    <text x="36" y="47" font-size="36" text-anchor="middle">🌿</text>
+  </g>
+
+  <!-- Title & Description -->
+  <text x="156" y="80" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="0.5">
+    FARM_LIT <tspan fill="#4ade80" font-size="22" font-weight="600">— Fresh. Natural. Everyday.</tspan>
+  </text>
+  <text x="156" y="112" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#a7f3d0" letter-spacing="0.2">
+    Production B2C Grocery E-Commerce &amp; Attribution Engine • Sathyamangalam, Tamil Nadu
+  </text>
+
+  <!-- Feature Metric Badges -->
+  <g transform="translate(156, 142)">
+    <rect width="185" height="32" rx="16" fill="#22c55e" fill-opacity="0.12" stroke="#22c55e" stroke-width="1"/>
+    <text x="92" y="21" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#4ade80" text-anchor="middle">⚡ Next.js 14 App Router</text>
+  </g>
+
+  <g transform="translate(355, 142)">
+    <rect width="195" height="32" rx="16" fill="#eab308" fill-opacity="0.12" stroke="#eab308" stroke-width="1"/>
+    <text x="97" y="21" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#fde047" text-anchor="middle">🛒 Cross-Device Cart Sync</text>
+  </g>
+
+  <g transform="translate(564, 142)">
+    <rect width="190" height="32" rx="16" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1"/>
+    <text x="95" y="21" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">🔒 Supabase &amp; Prisma ORM</text>
+  </g>
+
+  <g transform="translate(768, 142)">
+    <rect width="185" height="32" rx="16" fill="#a855f7" fill-opacity="0.12" stroke="#a855f7" stroke-width="1"/>
+    <text x="92" y="21" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">📈 UTM Attribution Engine</text>
+  </g>
+</svg>
