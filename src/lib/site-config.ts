@@ -32,5 +32,5 @@ export const SITE_CONFIG = {
   },
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U',
-  gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '',
+  gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-PN54RJHM4B',
 };
