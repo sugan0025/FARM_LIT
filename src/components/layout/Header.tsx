@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import {
   ShoppingBag,
@@ -59,17 +60,24 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 group outline-none focus:outline-none focus:ring-0 active:outline-none select-none transition-transform active:scale-[0.98]"
+              className="flex items-center gap-3 group outline-none focus:outline-none focus:ring-0 active:outline-none select-none transition-transform active:scale-[0.98]"
             >
-              <div className="w-10 h-10 rounded-xl bg-farm-800 text-harvest-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-                <Sprout className="w-6 h-6" />
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-farm-200/80 shadow-sm group-hover:scale-105 transition-transform bg-[#F9F6EE] flex items-center justify-center p-0.5">
+                <Image
+                  src="/images/logo.png"
+                  alt="Farm_lit Logo"
+                  width={48}
+                  height={48}
+                  priority
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black tracking-tight text-farm-950 flex items-center">
                   FARM<span className="text-farm-600">_LIT</span>
                 </span>
                 <span className="text-[10px] tracking-wider uppercase text-earth-500 font-semibold -mt-1">
-                  Fresh • Natural • Daily
+                  Choose Organic • Choose Healthy
                 </span>
               </div>
             </Link>

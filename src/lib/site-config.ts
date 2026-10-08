@@ -39,7 +39,7 @@ export const SITE_CONFIG = {
       process.env.NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID || 'template_7mwdy7y',
     newOrderTemplateId:
       process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID || 'template_g2qd79g',
-    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
-    adminEmail: process.env.NEXT_PUBLIC_ADMIN_EMAIL || '',
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'PivdG7xK7QjtB53CX',
+    adminEmail: process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'farmlit26@gmail.com',
   },
 };

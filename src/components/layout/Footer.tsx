@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Sprout, Mail, Phone, MapPin, CheckCircle2, ArrowRight, ShieldCheck, Heart, Instagram } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 import { SITE_CONFIG } from '@/lib/site-config';
@@ -44,13 +45,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-earth-800">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-farm-700 text-harvest-400 flex items-center justify-center">
-                <Sprout className="w-6 h-6" />
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-earth-700 shadow-sm bg-[#F9F6EE] flex items-center justify-center p-0.5 group-hover:scale-105 transition-transform">
+                <Image
+                  src="/images/logo.png"
+                  alt="Farm_lit Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
-              <span className="text-2xl font-black text-white tracking-tight">
-                FARM<span className="text-farm-400">_LIT</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-white tracking-tight">
+                  FARM<span className="text-farm-400">_LIT</span>
+                </span>
+                <span className="text-[10px] tracking-wider uppercase text-earth-400 font-semibold -mt-1">
+                  Organic Grocery Store
+                </span>
+              </div>
             </Link>
             <p className="text-sm text-earth-400 leading-relaxed max-w-sm">
               Farm_lit delivers crisp, naturally harvested vegetables, seasonal fruits, stone-ground flours, and pure grocery essentials from local growers in Sathyamangalam and Erode straight to your doorstep.

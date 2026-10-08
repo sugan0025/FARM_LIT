@@ -105,7 +105,7 @@ export default function RootLayout({
     name: 'Farm_lit',
     alternateName: 'Farm_lit Organic Vegetables Sathyamangalam',
     url: SITE_CONFIG.baseUrl,
-    logo: `${SITE_CONFIG.baseUrl}/images/categories/vegetables.webp`,
+    logo: `${SITE_CONFIG.baseUrl}/images/logo.png`,
     image: `${SITE_CONFIG.baseUrl}/images/banners/hero-fresh.webp`,
     description:
       'Farm-to-table organic grocery platform delivering fresh vegetables, fruits, grains, and pantry essentials directly from regional farms in Sathyamangalam, Tamil Nadu.',
