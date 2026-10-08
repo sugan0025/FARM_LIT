@@ -33,4 +33,13 @@ export const SITE_CONFIG = {
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U',
   gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-PN54RJHM4B',
+  email: {
+    serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_w2c2d8e',
+    orderConfirmedTemplateId:
+      process.env.NEXT_PUBLIC_EMAILJS_CUSTOMER_TEMPLATE_ID || 'template_7mwdy7y',
+    newOrderTemplateId:
+      process.env.NEXT_PUBLIC_EMAILJS_ADMIN_TEMPLATE_ID || 'template_g2qd79g',
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
+    adminEmail: process.env.NEXT_PUBLIC_ADMIN_EMAIL || '',
+  },
 };

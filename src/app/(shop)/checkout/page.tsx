@@ -8,6 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { getStoredAttribution } from '@/lib/utm';
 import { trackEvent } from '@/lib/analytics';
+import { sendOrderEmails } from '@/lib/email';
 import { ShieldCheck, Lock, CreditCard, Banknote, CheckCircle2, ArrowRight, AlertCircle } from 'lucide-react';
 
 export default function CheckoutPage() {
@@ -87,6 +88,14 @@ export default function CheckoutPage() {
         currency: 'INR',
         item_count: data.order.items.length,
       });
+
+      // Dispatch EmailJS customer & store notification emails
+      try {
+        await sendOrderEmails(data.order);
+      } catch (emailErr) {
+        // Log gracefully so checkout UX is never blocked
+        console.error('[EmailJS] Dispatch failed:', emailErr);
+      }
 
       // Clear local cart
       clearCart();
