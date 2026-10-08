@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Suspense } from 'react';
 import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
@@ -177,6 +178,30 @@ export default function RootLayout({
         <meta name="google-site-verification" content="H9B-G6_XMCWWpvjJi2V8uHXwSDpBDJE6e32or8Z6x-U" />
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
+
+        {/* Google Analytics 4 (GA4) Tag */}
+        {SITE_CONFIG.gaMeasurementId && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${SITE_CONFIG.gaMeasurementId}`}
+            />
+            <Script
+              id="google-analytics-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${SITE_CONFIG.gaMeasurementId}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="min-h-screen flex flex-col justify-between">
         <AuthProvider>

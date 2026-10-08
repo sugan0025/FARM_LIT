@@ -1,5 +1,12 @@
 import { AnalyticsEventType } from '@/types';
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 /**
  * Dispatches an analytics event cleanly to telemetry listeners without transmitting PII.
  */
@@ -30,7 +37,12 @@ export function trackEvent(event: AnalyticsEventType, properties?: Record<string
     url: window.location.pathname,
   };
 
-  // Dispatch custom browser event for integrations (Google Tag Manager, Segment, etc.)
+  // 1. Forward directly to Google Analytics 4 if gtag is initialized
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', event, sanitizedProps);
+  }
+
+  // 2. Dispatch custom browser event for integrations (Google Tag Manager, Segment, etc.)
   window.dispatchEvent(new CustomEvent('farmlit:analytics', { detail: payload }));
 
   // In development, log cleanly
